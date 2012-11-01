@@ -136,6 +136,11 @@ LOGGING = {
 FIXTURE_DIRS = [
     os.path.join(PROJECT_ROOT, "fixtures"),
 ]
+METRON_SETTINGS = {
+    "google": {
+        "2": os.environ.get("GOOGLE_ANALYTICS_ID", ""),
+    }
+}
 EMAIL_BACKEND = os.environ.get("EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend")
 EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.sendgrid.net")
 EMAIL_PORT = os.environ.get("EMAIL_PORT", 587)
