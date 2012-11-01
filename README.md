@@ -1,9 +1,8 @@
-pinax-project-account
-=====================
+bootstrap-ajax demo
+===================
 
-a starter project the incorporates account features from django-user-accounts
+This is a quick and simple demo project to show how many of the features of bootstrap-ajax (http://github.com/eldarion/bootstrap-ajax) work.
 
+You can find this online at a Gondor (https://gondor.io) instance here:
 
-To Use::
-
-    $ django-admin.py startproject [your_project_name] --template=https://github.com/pinax/pinax-project-account/zipball/master .
+http://uk013.o1.gondor.io/
