@@ -8,3 +8,7 @@ django-user-accounts==1.0b3
 django-forms-bootstrap==2.0.3.post1
 metron==1.0
 pinax-utils==1.0b1.dev3
+
+gondor==1.1.5
+psycopg2==2.4.5
+gunicorn==0.14.5

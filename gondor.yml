@@ -1,0 +1,14 @@
+key: FOHSH30AS0N
+vcs: git
+framework: django
+django:
+    managepy: manage.py
+requirements_file: requirements.txt
+on_deploy:
+    - manage.py syncdb --noinput
+    - manage.py collectstatic --noinput
+static_urls:
+    - /site_media:
+        root: site_media/
+wsgi:
+    entry_point: demo.wsgi:application
