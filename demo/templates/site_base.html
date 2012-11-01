@@ -4,6 +4,15 @@
 {% load i18n %}
 
 {% block extra_head_base %}
+    <style type="text/css">
+        .task-label {
+            margin: 10px 0;
+            width: 250px;
+        }
+        #done-count h2 {
+            text-align: center;
+        }
+    </style>
     {% block extra_head %}{% endblock %}
 {% endblock %}
 
