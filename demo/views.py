@@ -96,6 +96,6 @@ def delete(request, pk):
     )
     task.delete()
     data = {
-        "html": ""
+        "html": "<div class=\"alert alert-info\">Task #{} deleted!</div>".format(pk)
     }
     return HttpResponse(json.dumps(data), mimetype="application/json")

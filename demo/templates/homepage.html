@@ -26,6 +26,7 @@
                 </div>
             </form>
             {% include "_complete_count.html" %}
+            <div id="message"></div>
             <table class="table table-striped" id="tasks">
                 {% for task in tasks %}
                     {% include "_task.html" %}
