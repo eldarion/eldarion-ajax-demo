@@ -55,7 +55,8 @@ def _task_data(request, task):
 
 @require_POST
 def mark_done(request, pk):
-    task = get_object_or_404(Task,
+    task = get_object_or_404(
+        Task,
         session__session_key=request.session.session_key,
         pk=pk
     )
@@ -67,7 +68,8 @@ def mark_done(request, pk):
 
 @require_POST
 def mark_undone(request, pk):
-    task = get_object_or_404(Task,
+    task = get_object_or_404(
+        Task,
         session__session_key=request.session.session_key,
         pk=pk
     )
@@ -90,7 +92,8 @@ def add(request):
 
 @require_POST
 def delete(request, pk):
-    task = get_object_or_404(Task,
+    task = get_object_or_404(
+        Task,
         session__session_key=request.session.session_key,
         pk=pk
     )
