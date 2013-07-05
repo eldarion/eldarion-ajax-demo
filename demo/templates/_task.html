@@ -3,11 +3,11 @@
         <div class="btn-toolbar">
             <div class="btn-group">
                 {% if task.done %}
-                    <a href="{% url task_mark_undone task.pk %}" class="btn ajax" data-method="post" data-refresh="#done-count" data-replace-closest="tr"><i class="icon-remove"></i></a>
+                    <a href="{% url "task_mark_undone" task.pk %}" class="btn ajax" data-method="post" data-refresh="#done-count" data-replace-closest="tr"><i class="icon-remove"></i></a>
                 {% else %}
-                    <a href="{% url task_mark_done task.pk %}" class="btn ajax" data-method="post" data-refresh="#done-count" data-replace-closest="tr"><i class="icon-ok"></i></a>
+                    <a href="{% url "task_mark_done" task.pk %}" class="btn ajax" data-method="post" data-refresh="#done-count" data-replace-closest="tr"><i class="icon-ok"></i></a>
                 {% endif %}
-                <a href="{% url task_delete task.pk %}" class="btn ajax" data-method="post" data-replace-inner="#message" data-remove-closest="tr" data-refresh="#done-count"><i class="icon-trash"></i></a>
+                <a href="{% url "task_delete" task.pk %}" class="btn ajax" data-method="post" data-replace-inner="#message" data-remove-closest="tr" data-refresh="#done-count"><i class="icon-trash"></i></a>
             </div>
         </div>
     </td>

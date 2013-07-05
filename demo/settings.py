@@ -60,7 +60,7 @@ STATICFILES_FINDERS = [
     "django.contrib.staticfiles.finders.FileSystemFinder",
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
-SECRET_KEY = os.environ.get("SECRET_KEY", "")
+SECRET_KEY = os.environ.get("SECRET_KEY", "change-me")
 TEMPLATE_LOADERS = [
     "django.template.loaders.filesystem.Loader",
     "django.template.loaders.app_directories.Loader",
@@ -74,7 +74,7 @@ TEMPLATE_CONTEXT_PROCESSORS = [
     "django.core.context_processors.tz",
     "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages",
-    "pinax_utils.context_processors.settings",
+    "pinax_theme_bootstrap.context_processors.theme",
     "account.context_processors.account",
 ]
 MIDDLEWARE_CLASSES = [
@@ -99,7 +99,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     
     # theme
-    "pinax_theme_bootstrap_account",
     "pinax_theme_bootstrap",
     "django_forms_bootstrap",
     

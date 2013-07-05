@@ -19,7 +19,7 @@
                     bootstrap-ajax
                 </a>
             </p>
-            <form class="form-inline ajax" method="post" action="{% url task_add %}" data-append="#tasks">
+            <form class="form-inline ajax" method="post" action="{% url "task_add" %}" data-append="#tasks">
                 {% csrf_token %}
                 <div class="input-append">
                     <input type="text" class="span4" name="label" placeholder="Enter a task...">
