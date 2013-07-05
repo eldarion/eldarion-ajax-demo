@@ -15,8 +15,8 @@
             <h1>Tasks</h1>
             <p class="lead">
                 A sample tasks app to demonstrate how to use
-                <a href="https://github.com/eldarion/bootstrap-ajax/">
-                    bootstrap-ajax
+                <a href="https://github.com/eldarion/eldarion-ajax/">
+                    eldarion-ajax
                 </a>
             </p>
             <form class="form-inline ajax" method="post" action="{% url "task_add" %}" data-append="#tasks">
@@ -35,4 +35,15 @@
         </div>
         <div class="span4"></div>
     </div>
+{% endblock %}
+
+
+{% block extra_body %}
+<script>
+    $(function() {
+        $("form").on("eldarion-ajax:success", function(e, $el, data) {
+            $el.find("input[type=text]").val("");
+        });
+    })
+</script>
 {% endblock %}

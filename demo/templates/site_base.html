@@ -1,5 +1,6 @@
 {% extends "theme_base.html" %}
 
+{% load staticfiles %}
 {% load metron_tags %}
 
 {% block extra_head_base %}
@@ -20,7 +21,7 @@
 {% endblock %}
 
 {% block extra_body_base %}
-    <script src="https://raw.github.com/eldarion/bootstrap-ajax/master/js/bootstrap-ajax.js"></script>
+    <script src="{% static "js/eldarion-ajax.min.js" %}"></script>
     {% analytics %}
     {% block extra_body %}{% endblock %}
 {% endblock %}
