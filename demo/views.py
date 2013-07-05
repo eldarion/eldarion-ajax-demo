@@ -38,7 +38,7 @@ def complete_count_fragment(request):
             })
         )
     }
-    return HttpResponse(json.dumps(data), mimetype="application/json")
+    return HttpResponse(json.dumps(data), content_type="application/json")
 
 
 def _task_data(request, task):
@@ -62,7 +62,7 @@ def mark_done(request, pk):
     task.done = True
     task.save()
     data = _task_data(request, task)
-    return HttpResponse(json.dumps(data), mimetype="application/json")
+    return HttpResponse(json.dumps(data), content_type="application/json")
 
 
 @require_POST
@@ -74,7 +74,7 @@ def mark_undone(request, pk):
     task.done = False
     task.save()
     data = _task_data(request, task)
-    return HttpResponse(json.dumps(data), mimetype="application/json")
+    return HttpResponse(json.dumps(data), content_type="application/json")
 
 
 @require_POST
@@ -85,7 +85,7 @@ def add(request):
         label=request.POST.get("label")
     )
     data = _task_data(request, task)
-    return HttpResponse(json.dumps(data), mimetype="application/json")
+    return HttpResponse(json.dumps(data), content_type="application/json")
 
 
 @require_POST
@@ -98,4 +98,4 @@ def delete(request, pk):
     data = {
         "html": "<div class=\"alert alert-info\">Task #{} deleted!</div>".format(pk)
     }
-    return HttpResponse(json.dumps(data), mimetype="application/json")
+    return HttpResponse(json.dumps(data), content_type="application/json")
