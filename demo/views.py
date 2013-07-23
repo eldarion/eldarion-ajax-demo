@@ -11,6 +11,28 @@ from django.contrib.sessions.models import Session
 from demo.models import Task
 
 
+def status(request):
+    data = {
+        "fragments": {
+            ".alert": render_to_string(
+                "_status.html",
+                RequestContext(request, {
+                    "count": Task.objects.filter(
+                        session__session_key=request.session.session_key
+                    ).count()
+                })
+            )
+        }
+    }
+    return HttpResponse(json.dumps(data), content_type="application/json")
+
+
+def total_count(request):
+    return HttpResponse(json.dumps({
+        "html": Task.objects.count()
+    }), content_type="application/json")
+
+
 def home(request):
     if not request.session.exists(request.session.session_key):
         request.session.create()
@@ -19,6 +41,7 @@ def home(request):
         "tasks": Task.objects.filter(
             session__session_key=request.session.session_key
         ),
+        "total_count": Task.objects.count(),
         "done_count": Task.objects.filter(
             session__session_key=request.session.session_key,
             done=True

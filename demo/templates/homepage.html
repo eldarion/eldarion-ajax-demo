@@ -9,15 +9,19 @@
 {% block topbar_base %}{% endblock %}
 
 {% block body %}
+    <div class="alert hide"></div>
     <div class="row">
         <div class="span4"></div>
-        <div class="span4">
+        <div class="span4" data-timeout="5000" data-url="{% url "status" %}">
             <h1>Tasks</h1>
             <p class="lead">
                 A sample tasks app to demonstrate how to use
                 <a href="https://github.com/eldarion/eldarion-ajax/">
                     eldarion-ajax
                 </a>
+            </p>
+            <p class="lead" data-interval="1000" data-url="{% url "total_count" %}" data-replace-inner="#total-count">
+                There have been <span id="total-count">{{ total_count }}</span> tasks added by everyone.
             </p>
             <form class="form-inline ajax" method="post" action="{% url "task_add" %}" data-append="#tasks">
                 {% csrf_token %}
